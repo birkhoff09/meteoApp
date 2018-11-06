@@ -13,17 +13,6 @@ export default class Splash extends React.Component {
       </View>
     );
   }
-
-  // async componentDidMount(){
-  //   await Font.loadAsync({
-  //     'roboto': require('../assets/fonts/Roboto-Bold.ttf'),
-  //   });
-  //   this.setState({fontLoaded: true});
-  // };
-
-  // state = {
-  //   fondLoaded: false
-  // }
 }
 
 const styles = StyleSheet.create({
@@ -37,6 +26,5 @@ const styles = StyleSheet.create({
     textAlign:'center',
     fontWeight: 'bold',
     fontSize: 20,
-    // fontFamily: 'roboto',
   }
 });

@@ -4,8 +4,8 @@ import {
   View, TouchableHighlight,
   ActivityIndicator, FlatList
 } from 'react-native';
-import axios from 'axios'
 import WeatherRow from './weather/Row'
+import WeatherService from '../services/WeatherService'
 
 
 export default class Result extends React.Component {
@@ -29,12 +29,11 @@ export default class Result extends React.Component {
   }
 
   fetchWeather() {
-    axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${this.state.ville},tg&units=metric&appid=08d6f9734faaa07b2e5ab89ff13d1249`)
-      .then((response) => {
-        this.setState({ report: response.data, error: false })
-      }).catch((error) => {
-        this.setState({ error: true, errormsg: error })
-      });
+    new WeatherService().getWeatherByCity(this.state.ville).then((response) => {
+      this.setState({ report: response.data, error: false })
+    }).catch((error) => {
+      this.setState({ error: true, errormsg: error })
+    });
   }
 
   _onPress(item) {
@@ -61,6 +60,7 @@ export default class Result extends React.Component {
               data={this.state.report.list}
               renderItem={({ item, index, separators }) =>
                 <TouchableHighlight
+                  underlayColor="white"
                   onPress={() => this._onPress(item)}
                   onShowUnderlay={separators.highlight}
                   onHideUnderlay={separators.unhighlight}>

@@ -36,7 +36,7 @@ export class Search extends React.Component {
         <View style={styles.villeContainer} >
           <TextInput style={styles.ville} placeholder="Tapez votre ville"
             placeholderTextColor="#333" underlineColorAndroid="transparent"
-            textDecorationLine="none" 
+            textDecorationLine="none"
             onChangeText={(ville) => this.setVille({ ville })}
             onSubmitEditing={() => this.submit()}
             value={this.state.ville} />

@@ -19,11 +19,9 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <StatusBar backgroundColor="blue" hidden={true}
-          barStyle="dark-content" />
+        <StatusBar backgroundColor="blue" hidden={false}
+          barStyle="light-content" />
         <View style={{ paddingTop: Constants.statusBarHeight }} />
-
-
         <Tabs />
       </View>
     );
@@ -37,7 +35,8 @@ const Tabs = createBottomTabNavigator({
   About: {
     screen: About
   },
-}, {
+},
+  {
     tabBarPosition: 'bottom',
     navigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ focused, horizontal, tintColor }) => {
@@ -48,9 +47,7 @@ const Tabs = createBottomTabNavigator({
         } else if (routeName === 'About') {
           iconName = `ios-options${focused ? '' : '-outline'}`;
         }
-
         // You can return any component that you like here! We usually use an
-        // icon component from react-native-vector-icons
         return <Ionicons name={iconName} size={horizontal ? 20 : 25} color={tintColor} />;
       },
     }),
