@@ -2,7 +2,7 @@
   "expo": {
     "name": "Meteo App",
     "description": "Application de méteo perso made by birkhoff.",
-    "slug": "Meteo App",
+    "slug": "MeteoApp",
     "privacy": "public",
     "sdkVersion": "30.0.0",
     "platforms": ["ios", "android"],
@@ -10,7 +10,7 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/meteo14.jpg",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -24,7 +24,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.dksoft.meteo"
     }
   }
 }
