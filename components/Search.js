@@ -18,7 +18,7 @@ export class Search extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { ville: 'Lomé' };
+    this.state = { ville: 'Lome' };
   }
 
   setVille(ville) {
