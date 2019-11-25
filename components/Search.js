@@ -25,6 +25,11 @@ export class Search extends React.Component {
     this.setState(ville);
   }
 
+  searchVille(ville) {
+    // Add search stuff
+    this.setState(ville);
+  }
+
   submit() {
     this.props.navigation.navigate('Result', { ville: this.state.ville })
   }
